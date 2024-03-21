@@ -18,6 +18,7 @@ use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\Radio;
 
 class InstructorResource extends Resource
 {
@@ -35,6 +36,11 @@ class InstructorResource extends Resource
                 TextInput::make('name')
                 ->label('Instructor Name'),
                 TextInput::make('email'),
+                Radio::make('type')
+                ->options([
+                    'regular' => 'Regular',
+                    'visiting' => 'Visiting',
+                ]),
                 TextInput::make('phone'),
                 FileUpload::make('image')
                     ->label('Image')
